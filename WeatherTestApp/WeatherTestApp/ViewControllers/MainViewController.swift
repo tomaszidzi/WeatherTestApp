@@ -10,11 +10,15 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var headerView: MainHeaderView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         APIManager.getWeather() { (response, error) in
-            
+            if let weatherResponse = response {
+                self.headerView.updateUI(with: weatherResponse)
+            }
         }
         
         APIManager.getForecast() { (response, error) in
