@@ -41,6 +41,10 @@ class MainHeaderView: UIView {
         self.dataLabel.text = "Today, \(String(describing: response.timestamp))"
         self.tempLabel.text = "\(response.main?.temp)"
         self.locationLabel.text = response.city
-        self.descripionLabel.text = response.details?.first?.main
+        
+        if let descriptionName = response.details?.first?.main {
+            self.descripionLabel.text = descriptionName
+            self.iconImageView.image = UIImage(named: descriptionName)
+        }
     }
 }
