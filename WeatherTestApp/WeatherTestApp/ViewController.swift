@@ -13,6 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        APIManager.getWeather() { (response, error) in
+            
+        }
+        
+        APIManager.getForecast() { (response, error) in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
