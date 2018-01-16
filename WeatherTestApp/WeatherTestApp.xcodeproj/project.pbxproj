@@ -13,6 +13,9 @@
 		F3E56E4C200E103400C0C687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E56E4A200E103400C0C687 /* Main.storyboard */; };
 		F3E56E4E200E103400C0C687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E56E4D200E103400C0C687 /* Assets.xcassets */; };
 		F3E56E51200E103400C0C687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E56E4F200E103400C0C687 /* LaunchScreen.storyboard */; };
+		F3E56E5A200E144B00C0C687 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E59200E144B00C0C687 /* APIManager.swift */; };
+		F3E56E5D200E339A00C0C687 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E5C200E339A00C0C687 /* WeatherResponse.swift */; };
+		F3E56E5F200E5DBD00C0C687 /* ForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E5E200E5DBD00C0C687 /* ForecastResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		F3E56E4D200E103400C0C687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3E56E50200E103400C0C687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3E56E52200E103400C0C687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3E56E59200E144B00C0C687 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F3E56E5C200E339A00C0C687 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		F3E56E5E200E5DBD00C0C687 /* ForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResponse.swift; sourceTree = "<group>"; };
 		FA468CAB596BB0596240E4C2 /* Pods-WeatherTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +84,8 @@
 		F3E56E45200E103400C0C687 /* WeatherTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				F3E56E5B200E336400C0C687 /* Model */,
+				F3E56E58200E142D00C0C687 /* Services */,
 				F3E56E46200E103400C0C687 /* AppDelegate.swift */,
 				F3E56E48200E103400C0C687 /* ViewController.swift */,
 				F3E56E4A200E103400C0C687 /* Main.storyboard */,
@@ -86,6 +94,23 @@
 				F3E56E52200E103400C0C687 /* Info.plist */,
 			);
 			path = WeatherTestApp;
+			sourceTree = "<group>";
+		};
+		F3E56E58200E142D00C0C687 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F3E56E59200E144B00C0C687 /* APIManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F3E56E5B200E336400C0C687 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3E56E5C200E339A00C0C687 /* WeatherResponse.swift */,
+				F3E56E5E200E5DBD00C0C687 /* ForecastResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,8 +248,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3E56E5A200E144B00C0C687 /* APIManager.swift in Sources */,
+				F3E56E5F200E5DBD00C0C687 /* ForecastResponse.swift in Sources */,
 				F3E56E49200E103400C0C687 /* ViewController.swift in Sources */,
 				F3E56E47200E103400C0C687 /* AppDelegate.swift in Sources */,
+				F3E56E5D200E339A00C0C687 /* WeatherResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
