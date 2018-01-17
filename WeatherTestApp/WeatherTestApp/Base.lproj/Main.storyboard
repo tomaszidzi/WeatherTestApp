@@ -26,9 +26,9 @@
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2aE-f0-mAI">
                                         <rect key="frame" x="0.0" y="323.5" width="375" height="323.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="85" id="xUg-sv-wxb">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCell" rowHeight="85" id="xUg-sv-wxb" customClass="ForecastCell" customModule="WeatherTestApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xUg-sv-wxb" id="afq-BA-lC2">
@@ -38,7 +38,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jUc-jR-cJj">
                                                             <rect key="frame" x="20" y="10" width="335" height="64.5"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B4h-RC-biJ">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B4h-RC-biJ">
                                                                     <rect key="frame" x="0.0" y="0.0" width="111.5" height="64.5"/>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oPk-Km-HpB">
@@ -86,13 +86,24 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="conditionLabel" destination="84C-TV-Xle" id="Qsb-ID-46T"/>
+                                                    <outlet property="dayLabel" destination="cPC-Iz-mRO" id="rXE-Vo-e77"/>
+                                                    <outlet property="iconImageView" destination="B4h-RC-biJ" id="JPE-J3-GW3"/>
+                                                    <outlet property="maxTempLabel" destination="Fet-FF-Aac" id="GTh-cW-L7H"/>
+                                                    <outlet property="minTempLabel" destination="xC6-Bf-1Y6" id="aCe-0l-5MJ"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="jts-xw-mLc"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="jXT-Q7-OOR"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gvT-Nv-3lM" secondAttribute="trailing" id="5XP-dD-dsL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gvT-Nv-3lM" secondAttribute="bottom" id="XFC-6B-IoF"/>
@@ -102,6 +113,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="forecastTableView" destination="2aE-f0-mAI" id="n55-7e-uQh"/>
                         <outlet property="headerView" destination="lck-ty-u86" id="ZRu-gM-KVm"/>
                     </connections>
                 </viewController>
