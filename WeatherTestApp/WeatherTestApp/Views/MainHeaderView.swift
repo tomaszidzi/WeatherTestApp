@@ -38,13 +38,19 @@ class MainHeaderView: UIView {
     }
 
     func updateUI(with response: WeatherResponse) {
-        self.dataLabel.text = "Today, \(String(describing: response.timestamp))"
-        self.tempLabel.text = "\(response.main?.temp)"
-        self.locationLabel.text = response.city
+        if let date = response.timestamp {
+            self.dataLabel.text = "Today, " + date.timestampToLongDateString
+        }
+        
+        if let temperature = response.main?.temp {
+            self.tempLabel.text = "\(temperature.celsius) °C"
+        }
         
         if let descriptionName = response.details?.first?.main {
             self.descripionLabel.text = descriptionName
             self.iconImageView.image = UIImage(named: descriptionName)
         }
+        
+        self.locationLabel.text = response.city
     }
 }
