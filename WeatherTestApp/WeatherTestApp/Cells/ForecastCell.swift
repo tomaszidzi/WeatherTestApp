@@ -29,11 +29,11 @@ class ForecastCell: UITableViewCell {
         }
         
         if let minTemp = response.temperature?.min {
-            self.minTempLabel.text = "\(minTemp.celsius) °C"
+            self.minTempLabel.text = minTemp.celsiusString
         }
         
         if let maxTemp = response.temperature?.max {
-            self.maxTempLabel.text = "\(maxTemp.celsius) °C"
+            self.maxTempLabel.text = maxTemp.celsiusString
         }
     }
 }

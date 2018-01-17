@@ -45,7 +45,7 @@ class MainHeaderView: UIView {
         }
         
         if let temperature = response.main?.temp {
-            self.tempLabel.text = "\(temperature.celsius) °C"
+            self.tempLabel.text = temperature.celsiusString
         }
         
         if let descriptionName = response.details?.first?.main {

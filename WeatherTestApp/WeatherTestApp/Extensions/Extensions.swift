@@ -9,11 +9,15 @@
 import Foundation
 
 extension Double {
-    var celsius : Double {
+    var celsius: Double {
         return (self - 273.15).rounded()
     }
     
-    var timestampToLongDateString : String {
+    var celsiusString: String {
+        return "\(celsius) °C"
+    }
+    
+    var timestampToLongDateString: String {
         let date = Date(timeIntervalSince1970: self)
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
@@ -21,7 +25,7 @@ extension Double {
         return dateFormatter.string(from: date)
     }
     
-    var timestampToWeekDayString : String {
+    var timestampToWeekDayString: String {
         let date = Date(timeIntervalSince1970: self)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat  = "EEEE"

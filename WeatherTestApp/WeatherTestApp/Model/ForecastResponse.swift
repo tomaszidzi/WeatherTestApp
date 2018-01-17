@@ -49,12 +49,12 @@ struct ForecastDailyWeather: Mappable {
 }
 
 struct TemperatureWeather : Mappable {
-    var night : Double?
-    var min : Double?
-    var eve : Double?
-    var day : Double?
-    var max : Double?
-    var morn : Double?
+    var night: Double?
+    var min: Double?
+    var eve: Double?
+    var day: Double?
+    var max: Double?
+    var morn: Double?
     
     init?(map: Map) {
         
