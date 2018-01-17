@@ -12,7 +12,7 @@ import ObjectMapper
 class WeatherResponse: Mappable {
     var base: String?
     var id: Int?
-    var timestamp: Int?
+    var timestamp: Double?
     var cod: Int?
     var city: String?
     var main: MainWeather?
