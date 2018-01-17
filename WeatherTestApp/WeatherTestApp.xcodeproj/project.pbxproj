@@ -20,6 +20,7 @@
 		F3E56E65200E785E00C0C687 /* MainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3E56E64200E785E00C0C687 /* MainHeaderView.xib */; };
 		F3E56E68200F54C400C0C687 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E67200F54C400C0C687 /* Extensions.swift */; };
 		F3E56E6B200F5F1900C0C687 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E6A200F5F1900C0C687 /* ForecastCell.swift */; };
+		F3E56E6D200F8B3400C0C687 /* DetailForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E6C200F8B3400C0C687 /* DetailForecastViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		F3E56E64200E785E00C0C687 /* MainHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainHeaderView.xib; sourceTree = "<group>"; };
 		F3E56E67200F54C400C0C687 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F3E56E6A200F5F1900C0C687 /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		F3E56E6C200F8B3400C0C687 /* DetailForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailForecastViewController.swift; sourceTree = "<group>"; };
 		FA468CAB596BB0596240E4C2 /* Pods-WeatherTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				F3E56E48200E103400C0C687 /* MainViewController.swift */,
+				F3E56E6C200F8B3400C0C687 /* DetailForecastViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				F3E56E5A200E144B00C0C687 /* APIManager.swift in Sources */,
 				F3E56E5F200E5DBD00C0C687 /* ForecastResponse.swift in Sources */,
 				F3E56E49200E103400C0C687 /* MainViewController.swift in Sources */,
+				F3E56E6D200F8B3400C0C687 /* DetailForecastViewController.swift in Sources */,
 				F3E56E47200E103400C0C687 /* AppDelegate.swift in Sources */,
 				F3E56E6B200F5F1900C0C687 /* ForecastCell.swift in Sources */,
 				F3E56E63200E735A00C0C687 /* MainHeaderView.swift in Sources */,
