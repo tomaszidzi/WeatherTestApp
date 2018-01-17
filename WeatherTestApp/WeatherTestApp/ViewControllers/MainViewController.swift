@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var headerView: MainHeaderView!
     @IBOutlet weak var forecastTableView: UITableView!
     
-    var forecastResponse : ForecastResponse?
+    var forecastResponse: ForecastResponse?
     
     //MARK: Controller Life Cycle
     override func viewDidLoad() {
@@ -32,11 +32,23 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
+    //segue OpenDetailView
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ForecastDetailView",
+            let destination = segue.destination as? DetailForecastViewController {
+            if let cell = sender as? ForecastCell,
+                let indexPath = forecastTableView.indexPath(for: cell) {
+                let detail = self.forecastResponse?.details![indexPath.row]
+                destination.forecastDailyWeather = detail
+                forecastTableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
+    }
 }
 
 //MARK: TableView
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let detail = self.forecastResponse?.details {
