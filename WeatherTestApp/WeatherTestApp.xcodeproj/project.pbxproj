@@ -18,6 +18,7 @@
 		F3E56E5F200E5DBD00C0C687 /* ForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E5E200E5DBD00C0C687 /* ForecastResponse.swift */; };
 		F3E56E63200E735A00C0C687 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E62200E735A00C0C687 /* MainHeaderView.swift */; };
 		F3E56E65200E785E00C0C687 /* MainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3E56E64200E785E00C0C687 /* MainHeaderView.xib */; };
+		F3E56E68200F54C400C0C687 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E67200F54C400C0C687 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		F3E56E5E200E5DBD00C0C687 /* ForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResponse.swift; sourceTree = "<group>"; };
 		F3E56E62200E735A00C0C687 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
 		F3E56E64200E785E00C0C687 /* MainHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainHeaderView.xib; sourceTree = "<group>"; };
+		F3E56E67200F54C400C0C687 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FA468CAB596BB0596240E4C2 /* Pods-WeatherTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 		F3E56E45200E103400C0C687 /* WeatherTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				F3E56E66200F54AC00C0C687 /* Extensions */,
 				F3E56E61200E734800C0C687 /* Views */,
 				F3E56E5B200E336400C0C687 /* Model */,
 				F3E56E58200E142D00C0C687 /* Services */,
@@ -133,6 +136,14 @@
 				F3E56E64200E785E00C0C687 /* MainHeaderView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F3E56E66200F54AC00C0C687 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3E56E67200F54C400C0C687 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 				F3E56E47200E103400C0C687 /* AppDelegate.swift in Sources */,
 				F3E56E63200E735A00C0C687 /* MainHeaderView.swift in Sources */,
 				F3E56E5D200E339A00C0C687 /* WeatherResponse.swift in Sources */,
+				F3E56E68200F54C400C0C687 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
