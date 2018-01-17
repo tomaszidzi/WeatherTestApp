@@ -105,7 +105,7 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="RDZ-7i-Icu" firstAttribute="leading" secondItem="nRg-uP-9MR" secondAttribute="leading" id="5fp-oH-jXJ"/>
                 <constraint firstAttribute="bottom" secondItem="RDZ-7i-Icu" secondAttribute="bottom" constant="20" id="KQH-7q-SmM"/>

@@ -10,14 +10,15 @@ import UIKit
 
 class MainHeaderView: UIView {
 
+    //MARK: Properties
     @IBOutlet var view: UIView!
-    
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var descripionLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     
+    //MARK: Init
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         initializeSubviews()
@@ -37,6 +38,7 @@ class MainHeaderView: UIView {
         self.addSubview(view)
     }
 
+    //MARK: Functions
     func updateUI(with response: WeatherResponse) {
         if let date = response.timestamp {
             self.dataLabel.text = "Today, " + date.timestampToLongDateString
