@@ -20,5 +20,12 @@ extension Double {
         dateFormatter.locale = NSLocale.current
         return dateFormatter.string(from: date)
     }
+    
+    var timestampToWeekDayString : String {
+        let date = Date(timeIntervalSince1970: self)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = "EEEE"
+        return dateFormatter.string(from: date)
+    }
 }
 
