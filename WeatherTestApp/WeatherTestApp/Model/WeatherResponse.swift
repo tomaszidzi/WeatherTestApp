@@ -13,7 +13,7 @@ class WeatherResponse: Mappable {
     var base: String?
     var id: Int?
     var timestamp: Double?
-    var cod: Int?
+    var statusCode: Int?
     var city: String?
     var main: MainWeather?
     var coordinates: Coordinates?
@@ -27,7 +27,7 @@ class WeatherResponse: Mappable {
         base        <- map["base"]
         id          <- map["id"]
         timestamp   <- map["dt"]
-        cod         <- map["cod"]
+        statusCode  <- map["cod"]
         city        <- map["name"]
         main        <- map["main"]
         coordinates <- map["coord"]
