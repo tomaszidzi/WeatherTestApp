@@ -19,18 +19,8 @@ class MainViewController: UIViewController {
     //MARK: Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        APIManager.getWeatherFor(latitude: 54.372158, longitude: 18.638306) { (response, error) in
-            if let weatherResponse = response {
-                self.headerView.updateUI(with: weatherResponse)
-            }
-        }
-        
-        APIManager.getForecastFor(latitude: 54.372158, longitude: 18.638306) { (response, error) in
-            if let forecastDailyResponse = response {
-                self.forecastResponse = forecastDailyResponse
-                self.forecastTableView.reloadData()
-            }
-        }
+        self.title = "Weather App"
+        updateWeatherFor(latitude: 54.372158, longitude: 18.638306)
     }
     
     //segue OpenDetailView
@@ -42,6 +32,26 @@ class MainViewController: UIViewController {
                 let detail = self.forecastResponse?.details![indexPath.row]
                 destination.forecastDailyWeather = detail
                 forecastTableView.deselectRow(at: indexPath, animated: true)
+            }
+        } else if segue.identifier == "SearchCityView" {
+            if let destination = segue.destination as? SearchCityViewController {
+                destination.delegate = self
+            }
+        }
+    }
+    
+    // MARK: - Private instance methods
+    func updateWeatherFor(latitude: Double, longitude: Double) {
+        APIManager.getWeatherFor(latitude: latitude, longitude: longitude) { (response, error) in
+            if let weatherResponse = response {
+                self.headerView.updateUI(with: weatherResponse)
+            }
+        }
+        
+        APIManager.getForecastFor(latitude: latitude, longitude: longitude) { (response, error) in
+            if let forecastDailyResponse = response {
+                self.forecastResponse = forecastDailyResponse
+                self.forecastTableView.reloadData()
             }
         }
     }
@@ -74,6 +84,17 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85.0
+    }
+}
+
+//MARK: SearchCityDelegate
+extension MainViewController: SearchCityDelegate {
+    
+    func weatherWasSelected(for city: City) {
+        if let lat = city.coordinates?.latitude,
+            let lon = city.coordinates?.longitude {
+            updateWeatherFor(latitude: lat, longitude: lon)
+        }
     }
 }
 
