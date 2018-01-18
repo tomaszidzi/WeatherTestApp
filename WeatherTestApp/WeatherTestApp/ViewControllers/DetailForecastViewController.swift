@@ -23,12 +23,8 @@ class DetailForecastViewController: UIViewController {
     //MARK: Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Detail Weather"
         updateUI(with: forecastDailyWeather)
-    }
-    
-    //MARK: Actions
-    @IBAction func backPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
     }
     
     //MARK: Functions
