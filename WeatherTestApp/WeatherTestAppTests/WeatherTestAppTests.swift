@@ -48,9 +48,28 @@ class WeatherTestAppTests: XCTestCase {
     func testValidCallToWebServiceGetWeather() {
         let expect = expectation(description: "Get response from web service getWeather method.")
         
-        APIManager.getWeather() { (response, error) in
+        APIManager.getWeatherFor(latitude: 54.372158, longitude: 18.638306) { (response, error) in
             if (response != nil) {
                 expect.fulfill()
+            } else {
+                XCTFail("Connection to web service failed.")
+            }
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testValidCallToWebServiceGetWeatherWithStatusCode() {
+        let expect = expectation(description: "Status Code: 200")
+        
+        APIManager.getWeatherFor(latitude: 54.372158, longitude: 18.638306) { (response, error) in
+            if (response != nil) {
+                if (response?.statusCode == 200) {
+                    expect.fulfill()
+                } else {
+                    XCTFail("Web service connection error. Status code: \(String(describing: response!.statusCode))")
+                }
+                
             } else {
                 XCTFail("Connection to web service failed.")
             }
@@ -62,9 +81,32 @@ class WeatherTestAppTests: XCTestCase {
     func testValidCallToWebServiceGetForecast() {
         let expect = expectation(description: "Get response from web service getForecast method.")
         
-        APIManager.getForecast() { (response, error) in
+        APIManager.getForecastFor(latitude: 54.372158, longitude: 18.638306) { (response, error) in
             if (response != nil) {
                 expect.fulfill()
+            } else {
+                XCTFail("Connection to web service failed.")
+            }
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    
+    //Test below will not display status code, when something goes wrong.
+    //Due to the fact, when everything is ok status code is returned in JSON
+    //as String, otherwise as Int. WebService bug found thanks to UnitTests :)
+    func testValidCallToWebServiceGetForecastWithStatusCode() {
+        let expect = expectation(description: "Status Code: 200")
+        
+        APIManager.getForecastFor(latitude: 54.372158, longitude: 18.638306) { (response, error) in
+            if let res = response {
+                if (res.statusCode == "200") {
+                    expect.fulfill()
+                } else {
+                    XCTFail("Web service connection error.")
+                }
+                
             } else {
                 XCTFail("Connection to web service failed.")
             }
