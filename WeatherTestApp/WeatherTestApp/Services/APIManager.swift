@@ -65,4 +65,24 @@ class APIManager: NSObject {
                 }
             })
     }
+    
+    class func getCities(completion: @escaping ( _ response: CityResponse? , _ error: String?)->()) {
+        if let url = Bundle.main.url(forResource: "cityList", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let json = JSON(data)
+                if let dataJSON  = json.dictionaryObject {
+                    let object = CityResponse(JSON: dataJSON)
+                    object?.cities = object?.cities?.sorted(by:{$0.name! < $1.name!})
+                    completion(object, nil)
+                } else {
+                   completion(nil, nil)
+                }
+                
+            } catch {
+                print("Request failed with error:\(error)")
+                completion(nil, error.localizedDescription)
+            }
+        }
+    }
 }
