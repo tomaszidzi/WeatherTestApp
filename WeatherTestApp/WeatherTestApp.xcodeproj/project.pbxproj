@@ -22,6 +22,9 @@
 		F3E56E6B200F5F1900C0C687 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E6A200F5F1900C0C687 /* ForecastCell.swift */; };
 		F3E56E6D200F8B3400C0C687 /* DetailForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E6C200F8B3400C0C687 /* DetailForecastViewController.swift */; };
 		F3E56E75200FACD100C0C687 /* WeatherTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E74200FACD100C0C687 /* WeatherTestAppTests.swift */; };
+		F3E56E8C2010D43E00C0C687 /* cityList.json in Resources */ = {isa = PBXBuildFile; fileRef = F3E56E8B2010D43E00C0C687 /* cityList.json */; };
+		F3E56E8E2010DAD300C0C687 /* CityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E8D2010DAD300C0C687 /* CityResponse.swift */; };
+		F3E56E902010DE3500C0C687 /* SearchCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E56E8F2010DE3500C0C687 /* SearchCityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		F3E56E72200FACD100C0C687 /* WeatherTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E56E74200FACD100C0C687 /* WeatherTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTestAppTests.swift; sourceTree = "<group>"; };
 		F3E56E76200FACD100C0C687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3E56E8B2010D43E00C0C687 /* cityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cityList.json; sourceTree = "<group>"; };
+		F3E56E8D2010DAD300C0C687 /* CityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityResponse.swift; sourceTree = "<group>"; };
+		F3E56E8F2010DE3500C0C687 /* SearchCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewController.swift; sourceTree = "<group>"; };
 		FA468CAB596BB0596240E4C2 /* Pods-WeatherTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +134,7 @@
 				F3E56E4D200E103400C0C687 /* Assets.xcassets */,
 				F3E56E4F200E103400C0C687 /* LaunchScreen.storyboard */,
 				F3E56E52200E103400C0C687 /* Info.plist */,
+				F3E56E8A2010D2CA00C0C687 /* Supporting Files */,
 			);
 			path = WeatherTestApp;
 			sourceTree = "<group>";
@@ -145,6 +152,7 @@
 			children = (
 				F3E56E5C200E339A00C0C687 /* WeatherResponse.swift */,
 				F3E56E5E200E5DBD00C0C687 /* ForecastResponse.swift */,
+				F3E56E8D2010DAD300C0C687 /* CityResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +162,7 @@
 			children = (
 				F3E56E48200E103400C0C687 /* MainViewController.swift */,
 				F3E56E6C200F8B3400C0C687 /* DetailForecastViewController.swift */,
+				F3E56E8F2010DE3500C0C687 /* SearchCityViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -190,6 +199,14 @@
 				F3E56E76200FACD100C0C687 /* Info.plist */,
 			);
 			path = WeatherTestAppTests;
+			sourceTree = "<group>";
+		};
+		F3E56E8A2010D2CA00C0C687 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F3E56E8B2010D43E00C0C687 /* cityList.json */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3E56E65200E785E00C0C687 /* MainHeaderView.xib in Resources */,
+				F3E56E8C2010D43E00C0C687 /* cityList.json in Resources */,
 				F3E56E51200E103400C0C687 /* LaunchScreen.storyboard in Resources */,
 				F3E56E4E200E103400C0C687 /* Assets.xcassets in Resources */,
 				F3E56E4C200E103400C0C687 /* Main.storyboard in Resources */,
@@ -361,9 +379,11 @@
 			files = (
 				F3E56E5A200E144B00C0C687 /* APIManager.swift in Sources */,
 				F3E56E5F200E5DBD00C0C687 /* ForecastResponse.swift in Sources */,
+				F3E56E902010DE3500C0C687 /* SearchCityViewController.swift in Sources */,
 				F3E56E49200E103400C0C687 /* MainViewController.swift in Sources */,
 				F3E56E6D200F8B3400C0C687 /* DetailForecastViewController.swift in Sources */,
 				F3E56E47200E103400C0C687 /* AppDelegate.swift in Sources */,
+				F3E56E8E2010DAD300C0C687 /* CityResponse.swift in Sources */,
 				F3E56E6B200F5F1900C0C687 /* ForecastCell.swift in Sources */,
 				F3E56E63200E735A00C0C687 /* MainHeaderView.swift in Sources */,
 				F3E56E5D200E339A00C0C687 /* WeatherResponse.swift in Sources */,
@@ -524,6 +544,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HGYW5849U4;
 				INFOPLIST_FILE = WeatherTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CodeMeApp.WeatherTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,6 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HGYW5849U4;
 				INFOPLIST_FILE = WeatherTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CodeMeApp.WeatherTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
