@@ -10,6 +10,7 @@ import UIKit
 import ObjectMapper
 
 class ForecastResponse: Mappable {
+    var statusCode: String?
     var details: [ForecastDailyWeather]?
     
     required init?(map: Map) {
@@ -17,6 +18,7 @@ class ForecastResponse: Mappable {
     }
     
     func mapping(map: Map) {
+        statusCode  <- map["cod"]
         details     <- map["list"]
     }
 }
