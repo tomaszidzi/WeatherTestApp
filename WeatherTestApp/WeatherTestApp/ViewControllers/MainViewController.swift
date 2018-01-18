@@ -19,13 +19,13 @@ class MainViewController: UIViewController {
     //MARK: Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        APIManager.getWeather() { (response, error) in
+        APIManager.getWeatherFor(latitude: 54.372158, longitude: 18.638306) { (response, error) in
             if let weatherResponse = response {
                 self.headerView.updateUI(with: weatherResponse)
             }
         }
         
-        APIManager.getForecast() { (response, error) in
+        APIManager.getForecastFor(latitude: 54.372158, longitude: 18.638306) { (response, error) in
             if let forecastDailyResponse = response {
                 self.forecastResponse = forecastDailyResponse
                 self.forecastTableView.reloadData()
