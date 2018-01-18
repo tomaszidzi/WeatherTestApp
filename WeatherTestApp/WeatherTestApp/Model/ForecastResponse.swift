@@ -24,7 +24,6 @@ class ForecastResponse: Mappable {
 }
 
 struct ForecastDailyWeather: Mappable {
-    
     var timestamp: Double?
     var speed: Double?
     var humidity: Int?

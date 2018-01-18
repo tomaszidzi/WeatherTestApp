@@ -36,7 +36,6 @@ class WeatherResponse: Mappable {
 }
 
 struct MainWeather: Mappable {
-    
     var humidity: Int?
     var tempMin: Double?
     var tempMax: Double?
@@ -61,7 +60,6 @@ struct MainWeather: Mappable {
 }
 
 struct Coordinates: Mappable {
-    
     var latitude: Double?
     var longitude: Double?
     
@@ -76,7 +74,6 @@ struct Coordinates: Mappable {
 }
 
 struct DetailWeather: Mappable {
-    
     var id: Int?
     var main: String?
     var icon: String?
