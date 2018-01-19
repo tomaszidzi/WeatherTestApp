@@ -25,6 +25,7 @@ class SearchCityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Cities"
+        
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -53,7 +54,7 @@ class SearchCityViewController: UIViewController {
         navigationController?.navigationBar.tintAdjustmentMode = .automatic
     }
         
-    // MARK: - Private instance methods
+    //MARK: Functions
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
     }
@@ -114,8 +115,9 @@ extension SearchCityViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+// MARK: - UISearchResultsUpdating Delegate
 extension SearchCityViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
+    
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
