@@ -37,11 +37,15 @@ class SearchCityViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        APIManager.getCities() { (response, error) in
-            if let citiesResponse = response {
-                self.cityResponse = citiesResponse
-                self.citiesTableView.reloadData()
-                self.activityIndicator.stopAnimating()
+        DispatchQueue.global(qos: .userInitiated).async {
+            APIManager.getCities() { (response, error) in
+                if let citiesResponse = response {
+                    self.cityResponse = citiesResponse
+                    DispatchQueue.main.async {
+                        self.citiesTableView.reloadData()
+                        self.activityIndicator.stopAnimating()
+                    }
+                }
             }
         }
     }
